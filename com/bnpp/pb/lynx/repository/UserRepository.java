@@ -1,15 +1,13 @@
 package com.bnpp.pb.lynx.repository;
 
 import com.bnpp.pb.lynx.model.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
 import java.util.Optional;
 
-@Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository {
     
     Optional<User> findByUsername(String username);
     
     boolean existsByUsername(String username);
+    
+    User save(User user);
 } 
